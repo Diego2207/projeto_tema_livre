@@ -1,0 +1,61 @@
+package com.br.registro.comercio.models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+@Entity
+public class ComercioModel {
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	@NotNull
+	@NotBlank(message = "Nome obrigatório")
+	private String nomeDoComercio;
+	@NotNull
+	@NotBlank(message = "Tipo obrigatório")
+	private String tipoDeComercio;
+	@NotNull
+	@NotBlank(message = "Localização obrigatória")
+	private String localizacao;
+	
+	
+	
+	public ComercioModel() {
+		super();
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getNomeDoComercio() {
+		return nomeDoComercio;
+	}
+	public void setNomeDoComercio(String nomeDoComercio) {
+		this.nomeDoComercio = nomeDoComercio;
+	}
+	public String getTipoDeComercio() {
+		return tipoDeComercio;
+	}
+	public void setTipoDeComercio(String tipoDeComercio) {
+		this.tipoDeComercio = tipoDeComercio;
+	}
+	public String getLocalizacao() {
+		return localizacao;
+	}
+	public void setLocalizacao(String localizacao) {
+		this.localizacao = localizacao;
+	}
+	
+	
+	
+	
+
+}
